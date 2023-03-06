@@ -10,6 +10,7 @@ namespace Unity.FPS.Game
     // A simple Event System that can be used for remote systems communication
     public static class EventManager
     {
+
         static readonly Dictionary<Type, Action<GameEvent>> s_Events = new Dictionary<Type, Action<GameEvent>>();
 
         static readonly Dictionary<Delegate, Action<GameEvent>> s_EventLookups =
@@ -57,5 +58,7 @@ namespace Unity.FPS.Game
             s_Events.Clear();
             s_EventLookups.Clear();
         }
+
+        
     }
 }

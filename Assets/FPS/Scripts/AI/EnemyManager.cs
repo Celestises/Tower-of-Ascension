@@ -10,6 +10,10 @@ namespace Unity.FPS.AI
         public int NumberOfEnemiesTotal { get; private set; }
         public int NumberOfEnemiesRemaining => Enemies.Count;
 
+        public int levelCount = 0;
+
+        bool shouldUpdateLevelCount = true;
+
         void Awake()
         {
             Enemies = new List<EnemyController>();
@@ -33,6 +37,21 @@ namespace Unity.FPS.AI
 
             // removes the enemy from the list, so that we can keep track of how many are left on the map
             Enemies.Remove(enemyKilled);
+        }
+
+        public void Update() {
+
+            if (NumberOfEnemiesRemaining == 0 && shouldUpdateLevelCount)
+            {
+                levelCount += 1;
+                //Debug.Log("Increase level count", levelCount);
+                //System.Console.WriteLine("Increase level count: ", levelCount);
+                shouldUpdateLevelCount = false;
+            }
+            if (NumberOfEnemiesRemaining > 0)
+            {
+                shouldUpdateLevelCount = true;
+            }
         }
     }
 }

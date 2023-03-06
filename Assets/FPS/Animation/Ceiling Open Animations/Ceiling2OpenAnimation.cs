@@ -25,7 +25,7 @@ public class Ceiling2OpenAnimation : MonoBehaviour
     {
 
         lastPosition = transform.position;
-        if (m_EnemyManager.NumberOfEnemiesRemaining == 0)
+        if (m_EnemyManager.levelCount >= 2)
         {
             float xValue = 0 - Time.deltaTime * moveSpeed;
             float yValue = 0;
