@@ -24,7 +24,7 @@ public class EnemySpawn : MonoBehaviour
     void Update()
     {
         
-        if (!hasBeenSpawned && m_EnemyManager.levelCount == 1)
+        if (!hasBeenSpawned && m_EnemyManager.levelCount == 2)
         {
             hasBeenSpawned = true;
             Instantiate(newEnemy, transform.position, Quaternion.identity);
