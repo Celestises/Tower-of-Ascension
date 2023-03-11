@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class FloorPiece4Lvl0 : MonoBehaviour
 {
-    float moveSpeed = 2f;
+    float moveSpeed = .5f;
     float distanceTravelled;
     Vector3 lastPosition;
 
