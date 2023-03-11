@@ -15,6 +15,7 @@ namespace Unity.FPS.Gameplay
         public int NotificationEnemiesRemainingThreshold = 3;
 
         int m_KillTotal;
+        public int totalEnemiesToKill = 3;
 
         protected override void Start()
         {
@@ -44,11 +45,11 @@ namespace Unity.FPS.Gameplay
             int targetRemaining = MustKillAllEnemies ? evt.RemainingEnemyCount : KillsToCompleteObjective - m_KillTotal;
 
             // update the objective text according to how many enemies remain to kill
-            if (targetRemaining == 0)
+            if (m_KillTotal == totalEnemiesToKill)
             {
                 CompleteObjective(string.Empty, GetUpdatedCounterAmount(), "Objective complete : " + Title);
             }
-            else if (targetRemaining == 1)
+            else if (m_KillTotal == totalEnemiesToKill - 1)
             {
                 string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
                     ? "One enemy left"

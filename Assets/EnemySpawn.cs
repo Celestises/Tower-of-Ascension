@@ -28,6 +28,7 @@ public class EnemySpawn : MonoBehaviour
         {
             hasBeenSpawned = true;
             Instantiate(newEnemy, transform.position, Quaternion.identity);
+            //m_EnemyManager.RegisterEnemy(newEnemy);
         }
     }
 }
